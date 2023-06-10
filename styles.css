@@ -1,0 +1,123 @@
+body {
+    background-color: #2eb895;
+  }
+  
+
+nav {
+    background-color: #2eb895;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    text-align: right; /* Align the links to the right */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #2eb895;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: larger;
+    margin-top: 200px;
+    background-color: #2eb895;
+    text-align: center;
+    padding: 8px 12px;
+  }
+  
+  nav a:hover {
+    background-color: #ddd;
+  }
+  h1, h2, h3 {
+    margin: 20px;
+  }
+   
+  
+  h1 {
+    text-align: center; /* Center the text */
+    margin-top: 300px; /* Add top margin */
+    font-size: 85px;
+    margin-bottom: 10px; /* Add bottom margin */
+  }
+  h2 {
+    text-align: center; /* Center the text */
+    font-size: 85px;
+    margin-top: 10px; /* Add top margin */
+  }
+  h3 {
+    text-align: center; /* Center the text */
+    font-size: 25px;
+    margin-top: -30px; /* Add top margin */
+  }
+  .container {
+    margin-top: 200px;
+    max-width: 1000px; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Align text in the center */
+  }
+  
+  h4 {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  h4:first-letter {
+    text-transform: uppercase;
+  }
+  
+  h4 em {
+    font-style: italic;
+    color: #bd9d36;
+  }
+  
+  
+ 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    width: 190px;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #adadad;
+  }
+
+  .image-container {
+    float: right;
+      margin-left: -200px;
+    }
+
+
+    .logo {
+        width: 200px;
+        height: auto;
+        margin-right: 1000px;
+        margin-left: 10px;
+        float: left;
+      }
+      
