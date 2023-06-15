@@ -8,6 +8,7 @@
       <link rel="stylesheet" type="text/css" href="styles.css">
       <title>Selamat Datang</title>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <style>
         h1,
         h2 {
@@ -23,8 +24,8 @@
 
 
       <nav>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <input type="checkbox" id="menu-toggle">
         <img src="images/navman.png" alt="Logo" class="logo">
         <ul class="menu">
           <li><a href="#program-teman-juara">Program Kami</a></li>
@@ -35,8 +36,7 @@
       </nav>
 
 
-      <!--
-      <nav>
+<!--    
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <input type="checkbox" id="menu-toggle">
     <img src="images/navman.png" alt="Logo" class="logo">
@@ -47,9 +47,9 @@
       <li><a href="#">Sign In</a></li>
     </ul>
   </nav>
+      --> 
 
-
-      -->
+    
 
 
       <script src="https://unpkg.com/scrollreveal"></script>
@@ -61,7 +61,7 @@
 
       <div class="container sr-fade">
         <div class="image-container">
-          <img src="images/human.png" alt="Image Description">
+          <img src="images/human.svg" alt="Image Description">
         </div>
 
         <h1 class="sr-fade">Bimbel</h1>
@@ -169,18 +169,21 @@
               <div class="card-benef">
                 <img src="images/benef1.png" alt="Image 1">
                 <div class="card-content-benef">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat praesentium labore, qui
-                    distinctio expedita, corporis dignissimos modi sapiente, magni optio fugit libero maiores ad nihil
-                    quae asperiores tempora aut earum.</p>
+                  <p>
+                  Belajar lebih fokus dalam suasana bimbel. 
+Tenang dan terkontrol, siswa dapat belajar dengan fokus dan efektif. Hal ini akan membantu siswa dalam memahami materi pelajaran dengan baik.
+
+                  </p>
                 </div>
               </div>
 
               <div class="card-benef">
                 <img src="images/benef2.png" alt="Image 2">
                 <div class="card-content-benef">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat praesentium labore, qui
-                    distinctio expedita, corporis dignissimos modi sapiente, magni optio fugit libero maiores ad nihil
-                    quae asperiores tempora aut earum.</p>
+                  <p>
+                  Pembelajaran yang terjadwal. Hal ini akan membantu siswa dalam mengatur waktu belajar dengan lebih efektif dan meningkatkan produktivitas.
+
+                  </p>
                 </div>
               </div>
             </div>
@@ -189,18 +192,20 @@
               <div class="card-benef">
                 <img src="images/benef3.png" alt="Image 3">
                 <div class="card-content-benef">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat praesentium labore, qui
-                    distinctio expedita, corporis dignissimos modi sapiente, magni optio fugit libero maiores ad nihil
-                    quae asperiores tempora aut earum.</p>
+                  <p>
+                  Meningkatkan prestasi Akademik. Tutor-tutor yang perpengalaman akan membantu siswa dalam memahami pelajaran dan mengatasi kesulitan yang dihadapi dalam belajar.
+
+                  </p>
                 </div>
               </div>
 
               <div class="card-benef">
                 <img src="images/benef4.png" alt="Image 4">
                 <div class="card-content-benef">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat praesentium labore, qui
-                    distinctio expedita, corporis dignissimos modi sapiente, magni optio fugit libero maiores ad nihil
-                    quae asperiores tempora aut earum.</p>
+                  <p>
+                  bimbel dapat menyesuaikan metode. pembelajaran dengan gaya belajar siswa. Hal ini membantu siswa memahami materi pelajaran dengan lebih baik
+
+                  </p>
                 </div>
               </div>
             </div>
@@ -234,18 +239,69 @@
             </div>
 
             <h1 class="sr-fade">Alumni</h1>
-            <p class="sr-fade"> Benefit fasilitas yang diperoleh setelah bergabung di Bimbingan Teman Juara akan
-              mempermudah
-              kamu untuk
-              mencapai
-              impianmu! </p>
+           
 
 
 
+              <div class="section-slider">
+  <div class="slider-container">
+    <div class="slider-card active">
+      <img src="images/prof2.jpg" alt="Image 1">
+      <div class="card-content">
+      </div>
+    </div>
+    <div class="slider-card">
+      <img src="images/prof1.jpg" alt="Image 2">
+      <div class="card-content">
+        <h3>Image 2</h3>
+        <p>Description of Image 2</p>
+      </div>
+    </div>
+    <div class="slider-card">
+      <img src="image3.jpg" alt="Image 3">
+      <div class="card-content">
+        <h3>Image 3</h3>
+        <p>Description of Image 3</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
               <script src="app.js"></script>
 
-    </body>
 
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('change', function () {
+  if (menuToggle.checked) {
+    menu.style.display = 'flex';
+  } else {
+    menu.style.display = 'none';
+  }
+});
+</script>
+              
+    </body>
+    <!--
+    <div class="relative" style="width: 396px; height: 235px;">
+    <p class="absolute text-2xl text-white" style="left: 34px; top: 0px;">Bersama menjadi sang juara !</p>
+    <p class="w-80 h-12 absolute text-2xl font-bold" style="left: 39px; top: 65px;">Hubungi Kami Lebih Lanjut</p>
+    <div class="inline-flex flex-col space-y-4 items-center justify-end w-32 h-32 absolute left-0 bottom-0">
+        <img class="w-20 h-20" src="https://via.placeholder.com/87x75"/>
+        <p class="w-full h-8 text-xl font-bold text-white">Whatsapp</p>
+    </div>
+    <div class="inline-flex flex-col space-y-6 items-center justify-end w-20 h-32 absolute inset-x-0 bottom-0 mx-auto">
+        <img class="w-full h-16" src="https://via.placeholder.com/76x66"/>
+        <p class="w-20 h-8 text-xl font-bold text-white">E-Mail</p>
+    </div>
+    <div class="inline-flex flex-col space-y-1.5 items-center justify-end w-32 h-32 absolute right-0 bottom-0">
+        <img class="w-2/3 h-24" src="https://via.placeholder.com/81x94"/>
+        <p class="w-full h-1/4 text-xl font-bold text-white">Instagram</p>
+    </div>
+</div>
+      -->
     </html>

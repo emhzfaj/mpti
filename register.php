@@ -41,7 +41,7 @@
         .container-login input[type="text"],
         .container-login input[type="password"] {
             width: 100%;
-            height: 30px;
+            height:30px;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -62,8 +62,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0px;
+    margin-top: 10px;
 }
+
     </style>
     <nav>
         <header>
@@ -73,16 +74,19 @@
 </head>
 <body>
     <div class="container-login">
-        <h2>Login</h2>
-        <form action="/login" method="POST">
-            <input type="text" name="username" placeholder="Masukkan Username" required><br>
+        <h2>Daftar Akun</h2>
+        <form action="/register" method="POST">
+            <input type="text" name="nama" placeholder="Masukkan Nama Lengkap Anda" required><br>
+            <input type="password" name="nomor" placeholder="Masukkan Nomor Anda (+62)" required><br>
+            <input type="text" name="email" placeholder="Masukkan Username" required><br>
             <input type="password" name="password" placeholder="Masukkan Kata Sandi" required><br>
-            <input type="submit" value="Login">
+            <input type="password" name="passkonfirm" placeholder="Konfirmasi Kata Sandi" required><br>
+            <input type="submit" value="Daftar">
         </form>
-    </div>
-    <div class="prompt-container">
-            <p>Belum Punya Akun?</p>
-            <a href="register.php" class="prompt">Daftar</a>
+        <div class="prompt-container">
+            <p>Sudah Punya Akun?</p>
+            <a href="login.php" class="prompt">Login</a>
         </div>
+    </div>
 </body>
 </html>
