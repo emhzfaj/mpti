@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -50,7 +50,7 @@
         }
         
         .container-login input[type="submit"] {
-            background-color: #4caf50;
+            background-color: #07B594;
             color: #ffffff;
             border: none;
             cursor: pointer;
@@ -75,10 +75,10 @@
 <body>
     <div class="container-login">
         <h2>Daftar Akun</h2>
-        <form action="/register" method="POST">
+        <form action="register.php" method="POST">
             <input type="text" name="nama" placeholder="Masukkan Nama Lengkap Anda" required><br>
-            <input type="password" name="nomor" placeholder="Masukkan Nomor Anda (+62)" required><br>
-            <input type="text" name="email" placeholder="Masukkan Username" required><br>
+            <input type="text" name="nomor" placeholder="Masukkan Nomor Anda (+62)" required><br>
+            <input type="text" name="email" placeholder="Masukkan Email Anda" required><br>
             <input type="password" name="password" placeholder="Masukkan Kata Sandi" required><br>
             <input type="password" name="passkonfirm" placeholder="Konfirmasi Kata Sandi" required><br>
             <input type="submit" value="Daftar">
@@ -88,5 +88,49 @@
             <a href="login.php" class="prompt">Login</a>
         </div>
     </div>
+    <?php
+    include 'koneksi.php'; // Include the database connection file
+    // ... (database connection code)
+    
+   
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['nama'];
+    $phone = $_POST['nomor'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['passkonfirm'];
+
+    // Validate the form data (e.g., check for empty fields, validate email format, etc.)
+    // ...
+
+    // Check if the email already exists in the database
+    $sql = "SELECT * FROM tregister WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // Email already exists
+        echo "Email already exists. Please choose a different email.";
+    } else {
+        // Insert data into the database
+        $sql = "INSERT INTO tregister (nama, no_hp, email, password) VALUES ('$name', '$phone', '$email', '$password')";
+
+        if (mysqli_query($conn, $sql)) {
+            // Registration successful
+            mysqli_close($conn); // Close the database connection
+
+            // Redirect to login.php
+            header("Location: login.php");
+            exit();
+        } else {
+            // Registration failed
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+}
+
+mysqli_close($conn); // Close the database connection
+?>
+    
+
 </body>
 </html>

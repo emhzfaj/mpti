@@ -9,6 +9,20 @@
       <title>Selamat Datang</title>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script> 
+        <script>
+  document.getElementById("daftar-sekarang-btn").addEventListener("click", function() {
+    // Check the user's login status here
+    var isLoggedIn = false; // Replace with your login status check logic
+
+    if (!isLoggedIn) {
+      // Redirect to the registration page if the user is not logged in
+      window.location.href = "pendaftaran.php"; // Replace with the appropriate URL
+    }
+  });
+</script>
+
+      </script>
       <style>
         h1,
         h2 {
@@ -22,10 +36,9 @@
         }
       </style>
 
-
+      
       <nav>
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <input type="checkbox" id="menu-toggle">
+    
         <img src="images/navman.png" alt="Logo" class="logo">
         <ul class="menu">
           <li><a href="#program-teman-juara">Program Kami</a></li>
@@ -70,7 +83,9 @@
         </h3>
 
         <div class="button-container sr-fade">
-          <button type="button" class="btn">Daftar Sekarang</button>
+        <button type="button" id="daftar-sekarang-btn" class="btn">Daftar Sekarang</button>
+        <button type="button" class="btn" onclick="window.location.href='pendaftaran.php'">Daftar Sekarang</button>
+
           <button type="button" class="btn">Tentang Kami</button>
         </div>
         <div id="tentang-kami" class="container sr-fade">
@@ -271,20 +286,8 @@ Tenang dan terkontrol, siswa dapat belajar dengan fokus dan efektif. Hal ini aka
 
               <script src="app.js"></script>
 
-
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-const menu = document.querySelector('.menu');
-
-menuToggle.addEventListener('change', function () {
-  if (menuToggle.checked) {
-    menu.style.display = 'flex';
-  } else {
-    menu.style.display = 'none';
-  }
-});
-</script>
-              
+ 
+            
     </body>
     <!--
     <div class="relative" style="width: 396px; height: 235px;">
