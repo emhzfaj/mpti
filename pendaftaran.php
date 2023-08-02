@@ -122,6 +122,7 @@
             <input type="text" name="email" placeholder="Masukkan Email Anda" required><br>
             <input type="text" name="nomor" placeholder="Masukkan Nomor Anda (+62)" required><br>
             <input type="text" name="asal" placeholder="Asal Sekolah anda" required><br>
+            
             <input type="date" name="tanggal" placeholder="tanggal" required><br>
             <input type="text" name="kota" placeholder="Kota Kabupaten" required><br>
             <div class="dropdown-input">
@@ -151,41 +152,51 @@
         </form>
 
         <?php
-        include 'koneksi.php';
+// Enable output buffering at the very beginning
+ob_start();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $_POST['nama'];
-            $email = $_POST['email'];
-            $phone = $_POST['nomor'];
-            $school = $_POST['asal'];
-            $birthdate = $_POST['tanggal'];
-            $semester = $_POST['semester'];
-            $city = $_POST['kota'];
-            $parentName = $_POST['ortu'];
-            $parentPhone = $_POST['ortunomor'];
-            $program = $_POST['program'];
+// Include the database connection file
+include 'koneksi.php';
 
-            // Validate the form data (e.g., check for empty fields, validate email format, etc.)
-            // ...
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data
+    $name = $_POST['nama'];
+    $email = $_POST['email'];
+    $phone = $_POST['nomor'];
+    $school = $_POST['asal'];
+    $birthdate = $_POST['tanggal'];
+    $semester = $_POST['semester'];
+    $city = $_POST['kota'];
+    $parentName = $_POST['ortu'];
+    $parentPhone = $_POST['ortunomor'];
+    $program = $_POST['program'];
 
-            // Insert data into the tdaftar table
-            $sql = "INSERT INTO tdaftar (nama, email, no_hp, asal_sekolah, tgl_lahir, semester, domisili, program_bimbel, nama_ortu, no_hp_ortu) VALUES ('$name', '$email', '$phone', '$school', '$birthdate', '$semester', '$city', '$program', '$parentName', '$parentPhone')";
+    // Validate the form data (e.g., check for empty fields, validate email format, etc.)
+    // ...
 
-            if (mysqli_query($conn, $sql)) {
-                // Registration successful
-                mysqli_close($conn);
+    // Insert data into the tdaftar table
+    $sql = "INSERT INTO tdaftar (nama, email, no_hp, asal_sekolah, tgl_lahir, semester, domisili, program_bimbel, nama_ortu, no_hp_ortu) 
+            VALUES ('$name', '$email', '$phone', '$school', '$birthdate', '$semester', '$city', '$program', '$parentName', '$parentPhone')";
 
-                // Redirect to a success page or display a success message
-                header("Location: succes.php");
-                exit();
-            } else {
-                // Registration failed
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-            }
-        }
-
+    if (mysqli_query($conn, $sql)) {
+        // Registration successful
         mysqli_close($conn);
-        ?>
+
+        // Redirect to a success page or display a success message using JavaScript
+        echo '<script>alert("Registration successful. Redirecting to index.php..."); 
+              window.location.href = "index.php";</script>';
+        exit();
+    } else {
+        // Registration failed
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+}
+
+mysqli_close($conn);
+
+// Flush the output buffer and send it to the browser
+ob_end_flush();
+?>
     </div>
 </body>
 </html>
